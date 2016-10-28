@@ -68,6 +68,10 @@
 				</button>
 			  </div>
 			  <br/>
+			  Speed: 
+			  <input class="mdl-slider mdl-js-slider" type="range"
+			  min="1" max="3000" value="100" tabindex="0" id="speed">
+			  <br/>
 			  <button id="run" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
 				Run
 			</button>
@@ -111,6 +115,13 @@
 			});
 			
 			$("#run").click(function() {
+				if($(this).text()=="Stop") {
+					$("#run").text("Run");
+					clearInterval(window.mainthread);
+					return;
+				}
+				selectCell(parseInt(window.cells/2));
+				$("#run").text("Stop");
 				$("#parsedbf").val($("#bfcode").val().replace(/[^\+\-\>\<\.\,\[\]]/g, ""));
 				for(i = 1; i <= window.cells; i++) {
 					$("#cell-"+i+"-value").text("0");
@@ -119,7 +130,7 @@
 				var position = 0;
 				var curcell = parseInt(window.cells/2);
 				var nestedloops = [];
-				var mainthread = setInterval(function() {
+				window.mainthread = setInterval(function() {
 					var cur = $("#parsedbf").val().substr(position, 1);
 					$("#cur").text(cur);
 					
@@ -190,7 +201,7 @@
 						clearInterval(mainthread);
 						return;
 					}
-				}, 100);
+				}, $("#speed").val());
 			});
 		});
 		
