@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "ml.jefrey.brainemu"
+    versionCode = "10"
+    version     = "1.0.0" >
+
+  <name>BrainEmu</name>
+
+  <description>
+      Brainf*ck Emulator
+  </description>
+
+  <author href="https://jesobreira.github.io/brainemu" email="jefreysobreira+brainemu@gmail.com">
+      Jefrey S. Santos
+  </author>
+  
+    <icon src="icon.png" />
+
+</widget>
