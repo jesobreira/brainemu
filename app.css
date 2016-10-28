@@ -1,0 +1,12 @@
+.card-cell {
+	display: flex;
+	box-sizing:border-box;
+	align-items: center;
+	float: left !important;
+}
+#cells {
+	overflow-x: scroll;
+}
+.active-cell {
+	background: #00ee00;
+}
